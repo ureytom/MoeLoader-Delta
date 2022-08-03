@@ -336,7 +336,6 @@ namespace MoeLoaderDelta
 
             #region 初始化加载站点
             SiteManager.Instance.Initialize();
-
             foreach (IMageSite site in SiteManager.Instance.Sites)
             {
                 MenuItem menuItem = null;
@@ -2814,16 +2813,27 @@ namespace MoeLoaderDelta
             if (txt.Text.Length == 0) return;
             try
             {
-                num = txtNum.Text.ToSafeInt();
-                page = txtPage.Text.ToSafeInt();
-
-                txtNum.Text = num.ToSafeString();
-                txtPage.Text = page.ToSafeString();
+                if (txtNum != null)
+                {
+                    num = txtNum.Text.ToSafeInt();
+                    txtNum.Text = num.ToSafeString();
+                }
+                if (txtPage != null)
+                {
+                    page = txtPage.Text.ToSafeInt();
+                    txtPage.Text = page.ToSafeString();
+                }
             }
             catch (FormatException)
             {
-                txtNum.Text = num.ToSafeString();
-                txtPage.Text = page.ToSafeString();
+                if (txtNum != null)
+                {
+                    txtNum.Text = num.ToSafeString();
+                }
+                if (txtPage != null)
+                {
+                    txtPage.Text = page.ToSafeString();
+                }
             }
             catch (Exception) { }
         }

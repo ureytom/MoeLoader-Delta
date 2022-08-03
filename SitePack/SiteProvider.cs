@@ -32,9 +32,9 @@ namespace SitePack
                 "yande.re", "yande", "https://yande.re/", false, BooruProcessor.SourceType.XMLYD));
 
             sites.Add(new SiteLargeBooru(
-                "https://konachan.com",
-                "https://konachan.com/post.json?page={0}&limit={1}&tags={2}",
-                "https://konachan.com/tag.xml?limit={0}&order=count&name={1}",
+                "https://konachan.net",
+                "https://konachan.net/post.json?page={0}&limit={1}&tags={2}",
+                "https://konachan.net/tag.xml?limit={0}&order=count&name={1}",
                 "konachan.com", "konachan", null, false, BooruProcessor.SourceType.JSONKnc));
 
             sites.Add(new SiteBooru(
