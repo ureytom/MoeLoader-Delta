@@ -10,10 +10,10 @@ namespace SitePack
         {
             List<IMageSite> sites = new List<IMageSite>();
 
-            bool ecchimode = System.IO.File.Exists(
-                $"{System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().CodeBase).Replace("file:\\", string.Empty)}\\SitePacks\\18x.txt"
-                );
-
+            //bool ecchimode = System.IO.File.Exists(
+            //    $"{System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().CodeBase).Replace("file:\\", string.Empty)}\\SitePacks\\18x.txt"
+            //   );
+            bool ecchimode = true;
             sites.Add(new SitePixiv(SitePixiv.PixivSrcType.Author));
             sites.Add(new SitePixiv(SitePixiv.PixivSrcType.Tag));
             sites.Add(new SitePixiv(SitePixiv.PixivSrcType.TagFull));
@@ -35,14 +35,14 @@ namespace SitePack
                 "https://konachan.net",
                 "https://konachan.net/post.json?page={0}&limit={1}&tags={2}",
                 "https://konachan.net/tag.xml?limit={0}&order=count&name={1}",
-                "konachan.net", "konachan", null, false, BooruProcessor.SourceType.JSONKnc));
+                "konachan.com", "konachan", null, false, BooruProcessor.SourceType.JSONKnc));
 
-            sites.Add(new SiteBooru(
-                    "https://danbooru.donmai.us",
-                    "https://danbooru.donmai.us/posts.json?page={0}&limit={1}&tags={2}",
-                    "https://danbooru.donmai.us/autocomplete.json?search%5Bquery%5D={0}&search%5Btype%5D=tag_query&limit=10",
-                    "danbooru.donmai.us", "donmai", "https://danbooru.donmai.us/", false, BooruProcessor.SourceType.JSON,
-                    "https://danbooru.donmai.us/login"));
+            //sites.Add(new SiteBooru(
+            //        "https://danbooru.donmai.us",
+            //        "https://danbooru.donmai.us/posts.json?page={0}&limit={1}&tags={2}",
+            //        "https://danbooru.donmai.us/autocomplete.json?search%5Bquery%5D={0}&search%5Btype%5D=tag_query&limit=10",
+            //        "danbooru.donmai.us", "donmai", "https://danbooru.donmai.us/", false, BooruProcessor.SourceType.JSON,
+            //        "https://danbooru.donmai.us/login"));
 
             sites.Add(new SiteBooru(
                 "http://behoimi.org",
